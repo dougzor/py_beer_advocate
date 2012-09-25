@@ -42,8 +42,9 @@ def get_beer_list(beer_search):
 def get_brewery_info(brewery_id):
     brewery_html = requests.get(beer_advocate_brewery_page_url % brewery_id)
 
-    print brewery_html.text
+    #@todo: do this
 
+    return {}
 
 def get_beer_info(brewery_id, beer_id):
     """Given a beer url from get_beer_list() return the information for that beer
@@ -62,4 +63,3 @@ def get_beer_info(brewery_id, beer_id):
     return data
 
 
-get_beer_info("863", "7971")
