@@ -57,8 +57,11 @@ def get_beer_info(brewery_id, beer_id):
 
     score = soup.find("span", {"class": "BAscore_big"}).string
 
+    picture = soup.find("img")['src']
+
     data = {"brewery": brewery,
-            "score": score}
+            "score": score,
+            "image": picture}
 
     return data
 
