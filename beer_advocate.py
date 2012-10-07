@@ -31,8 +31,9 @@ def get_beer_list(beer_search):
                 brewery_id = parts[3]
 
             name = result.find("b").text
+            brewery = result.find_all("a")[1].text
 
-            beer_urls.append([name, beer_id, brewery_id])
+            beer_urls.append([name, brewery, beer_id, brewery_id])
 
         return beer_urls
     except AttributeError:
@@ -64,5 +65,3 @@ def get_beer_info(brewery_id, beer_id):
             "image": picture}
 
     return data
-
-
