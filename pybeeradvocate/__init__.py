@@ -14,7 +14,7 @@ def get_beer_list(beer_search):
 
     soup = BeautifulSoup(r.text)
 
-    content_element = soup.find(id="content")
+    content_element = soup.find(id="baContent")
     try:
         results = content_element.find("ul").find_all("li")
 
@@ -26,7 +26,7 @@ def get_beer_list(beer_search):
             beer_id = None
             brewery_id = None
 
-            if len(parts) == 5:
+            if len(parts) == 6:
                 beer_id = parts[4]
                 brewery_id = parts[3]
 
